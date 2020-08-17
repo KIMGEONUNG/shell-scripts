@@ -4,21 +4,24 @@ echo "### FINDER SCRIPT START ###"
 
 if [ -z $1 ]
 then
-    echo FAIL: nO KEYWORD 
+    echo FAIL: NO KEYWORD
     exit 1
 fi
 
 echo KEYWORD : $1
 
-targets=`find . -type f | grep cs$`
 targetsNum=`find . -type f | grep cs$ | wc -l`
+targets=`find . -type f | grep cs$ | sed "s: :\\\ :g"`
+targetflatten=`find . -type f | grep cs$`
+targetrevision=`echo $targetflatten | sed "s: ./:;./:g"`
 
 echo THE NUMBER OF TARGET FILES : $targetsNum
 
-for target in $targets
+IFS=";"
+
+for target in $targetrevision
 do
-    revision=`echo $target | sed "s: :\\\\\\ :g"`
-    result=`cat $revision | grep $1`
+    result=`cat $target | grep $1 -n`
     if ! [ -z $result ]
     then
         echo FILE NAME : $target
