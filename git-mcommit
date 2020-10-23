@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Whether message exist or not. 
+
+message=$1
+
+if [ -z "$message" ]
+then
+    echo No commit message
+    exit 1
+fi
+
+echo commit message: $message
+
+# Regular expression check 
+
+verbs="refact\|docs\|feat\|messy\|test\|add\|modif\|fix"
+filter=`echo $message | sed 's:^\($verbs\)\:\ .\+$:match:'`
+
+if [ "$filter" != "match" ]
+then
+    echo Fail: Invalid message format
+    exit 1
+fi
+
+# Send commit.
+
+git commit -m "$message"
