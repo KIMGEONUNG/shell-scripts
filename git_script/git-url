@@ -1,3 +1,21 @@
 #!/bin/bash
 
-cat .git/config | grep url | sed "s:.\+url = ::"
+url=`cat .git/config | grep url | sed "s:.\+url = ::"`
+
+chromestart=$1
+
+if [ -z $url ]
+then
+    echo URL not found
+fi
+
+if [ "$chromestart" == "-b" ] 
+then
+    start chrome $url
+else
+    echo $url
+fi
+
+
+
+
