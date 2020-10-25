@@ -19,10 +19,12 @@ fi
 echo target repository: $target
 
 checker=`echo $target | sed 's:\([0-9a-zA-Z_\-]\+\):match:'`
+gituser=`git remote -v | head -1 | sed "s:.\+github.com/\(\w\+\)/.\+:\1:"`
+
 if [ "$checker" != "match" ]
 then
     echo Fail: Invalid repository format
     exit 1
 fi
 
-git clone https://github.com/KIMGEONUNG/$target
+git clone https://github.com/$gituser/$target
