@@ -9,6 +9,7 @@ then
     echo URL not found
 fi
 
+# "-b" is first character in browser
 if [ "$chromestart" == "-b" ] 
 then
     start chrome $url
