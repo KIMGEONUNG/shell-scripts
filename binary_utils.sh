@@ -1,3 +1,5 @@
+#!/bash/bin
+
 binsert()
 {
     #EXAMPLE 

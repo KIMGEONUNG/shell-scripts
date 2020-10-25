@@ -1,3 +1,5 @@
+#!/bash/bin
+
 ENCODING_POSTFIX=_utf8.csv
 CATTEN_FILE=result_tmp
 RESULT_FILE=result.csv
