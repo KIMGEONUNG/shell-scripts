@@ -1,4 +1,4 @@
-#!/bash/bin
+#!bin/bash
 
 # data location url
 # https://www.data.go.kr/data/15004246/fileData.do

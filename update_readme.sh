@@ -21,7 +21,7 @@ do
     if [ "$firstLine" == "#!/bin/bash" ]
     then
         echo SCRIPT FILE DETECTED: $filePath 
-        contents=`cat $filePath | grep "^# SUMMARY" | sed "s:# SUMMARY\: \(.\+\):\1:"`
+        contents=`cat $filePath | grep "^# SUMMARY" | head -1 | sed "s:# SUMMARY\: \(.\+\):\1:"`
         if [ -z "$contents" ]
         then
             contents="-"

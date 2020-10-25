@@ -6,6 +6,7 @@ This is personal shell script storage for reuse
 
 | Script | Usage |
 |:-------|:------|
+|./apt_deal_encoding_convert.sh|-|
 |./diff.sh|-|
 |./extract_commit_message.sh|-|
 |./finder.sh|-|
@@ -13,6 +14,7 @@ This is personal shell script storage for reuse
 |./git_script/git-clog|-|
 |./git_script/git-mclone|-|
 |./git_script/git-mcommit|-|
+|./git_script/git-url|-|
 |./make_clone_file.sh|-|
 |./try_all_encoding.sh|-|
 |./update_readme.sh|-|

@@ -1,4 +1,4 @@
-#!/bash/bin
+#!/bin/bash/
 
 binsert()
 {
