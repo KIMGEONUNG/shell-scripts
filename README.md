@@ -1,13 +1,18 @@
-# shell_script_stoarge
-Personal shell script storage 
+# Shell Script Stoarge
 
-## Objective
+This is personal shell script storage for reuse
 
- Stack the shell scripts and refer the scripts when it comes to need it.
+## Script Specification
 
-## File list 
-
-- diff.sh
-  - check difference from two files with details
-- make_clone_file.sh
-  - make auto git-clone shell script extracting repository url from .git folder
+| Script | Usage |
+|:-------|:------|
+|./diff.sh|-|
+|./extract_commit_message.sh|-|
+|./finder.sh|-|
+|./git_script/build|Locate git scripts into executable directory |
+|./git_script/git-clog|-|
+|./git_script/git-mclone|-|
+|./git_script/git-mcommit|-|
+|./make_clone_file.sh|-|
+|./try_all_encoding.sh|-|
+|./update_readme.sh|-|

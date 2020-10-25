@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Whether message exist or not. 
+# Whether message exist or not. ..
 
 message=$1
 
