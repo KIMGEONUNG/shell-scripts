@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# SUMMARY: Pirnt short, clear and more readable commit logs 
+
 # <MOTIVATION>
 # "git log" command prints too much informations that does not need to be read. 
 # In order to shorten this commit log, one need to add flag options that is really tiresome and time consumming.

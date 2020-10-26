@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# SUMMARY: execute git-clone without prefix url, that is, only use repository name.
+
 # <MOTIVATION>
 # Every git repository url has same prefix string from start to username, 
 # so it is waste of time to type all url string. This script make user type

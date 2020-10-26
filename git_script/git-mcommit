@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# SUMMARY: Execute commit with checking message convention predifined. 
+
 # Whether message exist or not. ..
 
 message=$1
