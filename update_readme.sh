@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# SUMMARY: Update README.md automatically using text processing.
+
 thisFile=$0
 files=`find . -type f | grep -v \\.git/ | grep -v swp$`
 readme=README.md

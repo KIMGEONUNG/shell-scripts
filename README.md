@@ -7,7 +7,7 @@ This is personal shell script storage for reuse
 | Script | Usage |
 |:-------|:------|
 |./make_clone_file.sh|-|
-|./update_readme.sh|-|
+|./update_readme.sh|Update README.md automatically using text processing.|
 |./diff.sh|-|
 |./git_script/git-mclone|execute git-clone without prefix url, that is, only use repository name.|
 |./git_script/git-mcommit|Execute commit with checking message convention predifined. |
