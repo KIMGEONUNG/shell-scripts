@@ -4,6 +4,13 @@
 
 gitScripts=`find . -type f | grep \\./git-`
 targetPath="${HOME}/bin/"
+system=`uname`
+
+if [ $system == "Linux" ]  
+then
+    chmod +x git*
+fi
+
 
 echo TARGET_PATH: $targetPath
 for scriptPath in $gitScripts
