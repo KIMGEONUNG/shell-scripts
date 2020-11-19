@@ -16,7 +16,7 @@ echo commit message: $message
 
 # Regular expression check 
 
-verbs="refact\|docs\|feat\|messy\|test\|add\|modif\|fix"
+verbs="refact\|docs\|feat\|messy\|test\|add\|modif\|fix\|del"
 filter=`echo $message | sed "s:^\($verbs\)\:\ .\+$:match:"`
 
 if [ "$filter" != "match" ]
