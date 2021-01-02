@@ -3,9 +3,15 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+if [ "$#" -ne 1 ]
+  then 
+  echo "Give me the device path as first argument"
+  exit
+fi
+
 block_size=4096
 o_name="./inode-table.bin"
-device="/dev/nvme0n1p5"
+device=$1
 ranges=$(dumpe2fs $device 2>/dev/null | grep "Inode table" | sed "s:.\+\ \([0-9]\+-[0-9]\+\).\+:\1:")
 ranges_arr=($ranges)
 len=${#ranges_arr[@]}
