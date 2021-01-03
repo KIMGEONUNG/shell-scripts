@@ -3,14 +3,17 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-if [ "$#" -ne 1 ]
+if [ "$#" -ne 2 ]
   then 
-  echo "Give me the device path as first argument"
+  echo "Give me device path and inode number as arguments"
   exit
 fi
 
 device=$1
+index=$2
+
 o_name="./inode-table.bin"
+size_inode_entry=$(dumpe2fs $device 2>/dev/null | grep "Inode size" | sed "s:.*\ \([0-9]\+\)\ *:\1:")
 
 block_size=$(dumpe2fs $device 2>/dev/null | grep "Block size" | sed "s:.*\ \([0-9]\+\)\ *:\1:")
 ranges=$(dumpe2fs $device 2>/dev/null | grep "Inode table" | sed "s:.\+\ \([0-9]\+-[0-9]\+\).\+:\1:")
@@ -26,3 +29,5 @@ do
 
     dd if=$device bs=$block_size count=$(($to - $from + 1)) skip=$from 2>/dev/null >> $o_name
 done
+
+dd if=$o_name bs=$size_inode_entry count=1 skip=$(($index - 1)) > "inode-$index.bin" 

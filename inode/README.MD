@@ -10,3 +10,7 @@ The first arguement of script is target device block path.
 ``` bash
 sudo ./dump.hex.inode-table.sh "/dev/nvme0n1p5"
 ```
+
+``` bash
+sudo ./extract-inode-entry.sh /dev/nvme0n1p5 793574
+```
