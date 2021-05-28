@@ -67,6 +67,7 @@ filter=`echo $message | sed "s:^\($verbs\)\:\ .\+$:match:"`
 if [ "$filter" != "match" ]
 then
     echo Fail: Invalid message format
+    echo Valid verbs :  $verbs | sed 's:\\|:, :g'
     exit 1
 fi
 
