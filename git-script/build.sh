@@ -11,6 +11,10 @@ then
     chmod +x git*
 fi
 
+if [[ ! -d "~/bin" ]]
+then
+    mkdir ~/bin -v 
+fi
 
 echo TARGET_PATH: $targetPath
 for scriptPath in $gitScripts
